@@ -19,7 +19,7 @@ namespace Printer_BDD.Features.Connections
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Connections", Description="This file tests the Printer\'s connections", SourceFile="Features\\Connections\\Connections.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("Connections", Description="\tThis file tests the Printer\'s connections", SourceFile="Features\\Connections\\Connections.feature", SourceLine=0)]
     public partial class ConnectionsFeature
     {
         
@@ -34,7 +34,7 @@ namespace Printer_BDD.Features.Connections
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Connections", "Connections", "This file tests the Printer\'s connections", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Connections", "Connections", "\tThis file tests the Printer\'s connections", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -167,6 +167,84 @@ this.PrintASheetUsingDifferentConnections("Wireless", "should", ((string[])(null
         {
 #line 8
 this.PrintASheetUsingDifferentConnections("no connection", "should not", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void PrintASheetUsingPcsConnectedInAWiredNetwork(string connection, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "RF002",
+                    "RF",
+                    "Connections",
+                    "TC-0004"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("connection", connection);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Print a sheet using pcs connected in a wired network", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 25
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 26
+ testRunner.Given("the Printer is ready for use", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 27
+ testRunner.And(string.Format("the Printer is connected through {0}", connection), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 28
+ testRunner.When("the user1 sends a print job from pc1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 29
+ testRunner.And("the user2 sends a print job from pc2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 30
+ testRunner.Then("both jobs should be printed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Print a sheet using pcs connected in a wired network, Network", new string[] {
+                "RF002",
+                "RF",
+                "Connections",
+                "TC-0004"}, SourceLine=33)]
+        public virtual void PrintASheetUsingPcsConnectedInAWiredNetwork_Network()
+        {
+#line 25
+this.PrintASheetUsingPcsConnectedInAWiredNetwork("Network", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Print a sheet using pcs connected in a wired network, Wireless", new string[] {
+                "RF002",
+                "RF",
+                "Connections",
+                "TC-0004"}, SourceLine=33)]
+        public virtual void PrintASheetUsingPcsConnectedInAWiredNetwork_Wireless()
+        {
+#line 25
+this.PrintASheetUsingPcsConnectedInAWiredNetwork("Wireless", ((string[])(null)));
 #line hidden
         }
     }

@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <Folder Include="Drivers\" />
-    <Folder Include="Features\Performance\" />
     <Folder Include="Hooks\" />
     <Folder Include="Steps\" />
   </ItemGroup>

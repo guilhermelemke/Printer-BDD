@@ -19,7 +19,7 @@ namespace Printer_BDD.Features.Functionalities
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Print", Description="This file tests the Printer\'s print function", SourceFile="Features\\Functionalities\\Print.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("Print", Description="\tThis file tests the Printer\'s print function", SourceFile="Features\\Functionalities\\Print.feature", SourceLine=0)]
     public partial class PrintFeature
     {
         
@@ -34,7 +34,7 @@ namespace Printer_BDD.Features.Functionalities
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Functionalities", "Print", "This file tests the Printer\'s print function", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Functionalities", "Print", "\tThis file tests the Printer\'s print function", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,7 +70,7 @@ namespace Printer_BDD.Features.Functionalities
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void PrintASheetUsingDifferentPaperSizes(string paperSize, string action, string[] exampleTags)
+        public virtual void PrintASheetUsingDifferentPaperSizes(string paperSize, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "FR001",
@@ -84,7 +84,6 @@ namespace Printer_BDD.Features.Functionalities
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("PaperSize", paperSize);
-            argumentsOfScenario.Add("action", action);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Print a sheet using different paper sizes", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 8
 this.ScenarioInitialize(scenarioInfo);
@@ -116,58 +115,99 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("the user sends a print job", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.Then(string.Format("the sheet {0} be printed", action), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the sheet should be printed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Print a sheet using different paper sizes, USB", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Print a sheet using different paper sizes, A3", new string[] {
                 "FR001",
                 "FR",
                 "Functionalities",
                 "TC-0002"}, SourceLine=15)]
-        public virtual void PrintASheetUsingDifferentPaperSizes_USB()
+        public virtual void PrintASheetUsingDifferentPaperSizes_A3()
         {
 #line 8
-this.PrintASheetUsingDifferentPaperSizes("USB", "should", ((string[])(null)));
+this.PrintASheetUsingDifferentPaperSizes("A3", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Print a sheet using different paper sizes, Network", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Print a sheet using different paper sizes, A4", new string[] {
                 "FR001",
                 "FR",
                 "Functionalities",
                 "TC-0002"}, SourceLine=15)]
-        public virtual void PrintASheetUsingDifferentPaperSizes_Network()
+        public virtual void PrintASheetUsingDifferentPaperSizes_A4()
         {
 #line 8
-this.PrintASheetUsingDifferentPaperSizes("Network", "should", ((string[])(null)));
+this.PrintASheetUsingDifferentPaperSizes("A4", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Print a sheet using different paper sizes, Wireless", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Print a sheet using different paper sizes, A5", new string[] {
                 "FR001",
                 "FR",
                 "Functionalities",
                 "TC-0002"}, SourceLine=15)]
-        public virtual void PrintASheetUsingDifferentPaperSizes_Wireless()
+        public virtual void PrintASheetUsingDifferentPaperSizes_A5()
         {
 #line 8
-this.PrintASheetUsingDifferentPaperSizes("Wireless", "should", ((string[])(null)));
+this.PrintASheetUsingDifferentPaperSizes("A5", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Print a sheet using different paper sizes, no connection", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Print a sheet with empty paper drawer", new string[] {
                 "FR001",
                 "FR",
                 "Functionalities",
-                "TC-0002"}, SourceLine=15)]
-        public virtual void PrintASheetUsingDifferentPaperSizes_NoConnection()
+                "TC-0003"}, SourceLine=23)]
+        public virtual void PrintASheetWithEmptyPaperDrawer()
         {
-#line 8
-this.PrintASheetUsingDifferentPaperSizes("no connection", "should not", ((string[])(null)));
+            string[] tagsOfScenario = new string[] {
+                    "FR001",
+                    "FR",
+                    "Functionalities",
+                    "TC-0003"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Print a sheet with empty paper drawer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 24
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 25
+ testRunner.Given("the Printer is ready for use", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 26
+ testRunner.And("the Printer has no paper in the paper drawer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 27
+ testRunner.When("the user sends a print job", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 28
+ testRunner.Then("the sheet should not be printed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 29
+ testRunner.And("the Printer should warn a message that the paper drawer is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
         }
     }
 }

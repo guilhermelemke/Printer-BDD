@@ -1,9 +1,17 @@
-﻿Feature: SpecFlowFeature1
-	Simple calculator for adding two numbers
+﻿Feature: Scan
+	This file tests the Printer's scan function
 
-@mytag
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+@FR004
+@FR
+@Functionalities
+@TC-0007
+Scenario Outline: Scan a sheet using different paper sizes
+	Given the Printer is ready for use
+	When the user scans an original paper of size <PaperSize>
+	Then the sheet should be scanned and saved to the users pc
+
+	Examples:
+		| PaperSize |
+		| A3        |
+		| A4        |
+		| A5        |

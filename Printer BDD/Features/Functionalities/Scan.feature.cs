@@ -19,8 +19,8 @@ namespace Printer_BDD.Features.Functionalities
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("SpecFlowFeature1", Description="\tSimple calculator for adding two numbers", SourceFile="Features\\Functionalities\\Scan.feature", SourceLine=0)]
-    public partial class SpecFlowFeature1Feature
+    [TechTalk.SpecRun.FeatureAttribute("Scan", Description="\tThis file tests the Printer\'s scan function", SourceFile="Features\\Functionalities\\Scan.feature", SourceLine=0)]
+    public partial class ScanFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -34,7 +34,7 @@ namespace Printer_BDD.Features.Functionalities
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Functionalities", "SpecFlowFeature1", "\tSimple calculator for adding two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Functionalities", "Scan", "\tThis file tests the Printer\'s scan function", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,15 +70,22 @@ namespace Printer_BDD.Features.Functionalities
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers", new string[] {
-                "mytag"}, SourceLine=4)]
-        public virtual void AddTwoNumbers()
+        public virtual void ScanASheetUsingDifferentPaperSizes(string paperSize, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
-                    "mytag"};
+            string[] @__tags = new string[] {
+                    "FR004",
+                    "FR",
+                    "Functionalities",
+                    "TC-0007"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 5
+            argumentsOfScenario.Add("PaperSize", paperSize);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Scan a sheet using different paper sizes", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -98,20 +105,53 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
- testRunner.Given("the first number is 50", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 7
- testRunner.And("the second number is 70", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 8
- testRunner.When("the two numbers are added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 9
- testRunner.Then("the result should be 120", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("the Printer is ready for use", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 10
+ testRunner.When(string.Format("the user scans an original paper of size {0}", paperSize), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 11
+ testRunner.Then("the sheet should be scanned and saved to the users pc", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Scan a sheet using different paper sizes, A3", new string[] {
+                "FR004",
+                "FR",
+                "Functionalities",
+                "TC-0007"}, SourceLine=14)]
+        public virtual void ScanASheetUsingDifferentPaperSizes_A3()
+        {
+#line 8
+this.ScanASheetUsingDifferentPaperSizes("A3", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Scan a sheet using different paper sizes, A4", new string[] {
+                "FR004",
+                "FR",
+                "Functionalities",
+                "TC-0007"}, SourceLine=14)]
+        public virtual void ScanASheetUsingDifferentPaperSizes_A4()
+        {
+#line 8
+this.ScanASheetUsingDifferentPaperSizes("A4", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Scan a sheet using different paper sizes, A5", new string[] {
+                "FR004",
+                "FR",
+                "Functionalities",
+                "TC-0007"}, SourceLine=14)]
+        public virtual void ScanASheetUsingDifferentPaperSizes_A5()
+        {
+#line 8
+this.ScanASheetUsingDifferentPaperSizes("A5", ((string[])(null)));
+#line hidden
         }
     }
 }

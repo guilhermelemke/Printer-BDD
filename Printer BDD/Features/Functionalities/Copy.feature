@@ -7,9 +7,9 @@
 @TC-0005
 Scenario Outline: Copy a sheet using different paper sizes
 	Given the Printer is ready for use
-	And the Printer has paper in size <PaperSize> in the paper drawer
-	When the user sends a print job
-	Then the sheet should be printed
+	And the paper drawer is filled with the paper size <PaperSize>
+	When the user makes a copy of an original paper of size <PaperSize>
+	Then the sheet should be copied and printed correctly
 
 	Examples:
 		| PaperSize |
@@ -17,13 +17,13 @@ Scenario Outline: Copy a sheet using different paper sizes
 		| A4        |
 		| A5        |
 
-@FR001
+@FR003
 @FR
 @Functionalities
 @TC-0006
-Scenario: Print a sheet with empty paper drawer
+Scenario: Copy a sheet with empty paper drawer
 	Given the Printer is ready for use
 	And the Printer has no paper in the paper drawer
-	When the user sends a print job
+	When the user makes a copy
 	Then the sheet should not be printed
 	And the Printer should warn a message that the paper drawer is empty
