@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Printer BDD", "Printer BDD\Printer BDD.csproj", "{6FA63C5F-D78E-4946-879D-392E391AB934}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FA63C5F-D78E-4946-879D-392E391AB934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA63C5F-D78E-4946-879D-392E391AB934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA63C5F-D78E-4946-879D-392E391AB934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA63C5F-D78E-4946-879D-392E391AB934}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {959F848C-D57A-461D-993B-F6EE2F52FDE3}
+	EndGlobalSection
+EndGlobal
